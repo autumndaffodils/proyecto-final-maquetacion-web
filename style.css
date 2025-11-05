@@ -1,0 +1,251 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'roboto mono', monospace;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    background-color: black;
+}
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.navlist {
+    display: flex;
+
+}
+
+.navlist a {
+    margin-left: 60px;
+    font-size: 15px;
+    border-bottom: 2px solid transparent;
+    transition: all .5s ease;
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid white;
+}
+
+#menu-icon {
+    display: none; 
+    color: white;   
+    font-size: 35px;
+    z-index: 101;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon-action {
+    display: none;
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #7d3066 0%, #7a0055 25%, #000 75%);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+section {
+    padding: 0 5%;
+}
+
+.hero-text h5 {
+font-size: 15px;
+font-weight: 400;
+}
+
+.hero-text h1 {
+    font-family: 'source code pro', monospace;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+
+.hero-text p {
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.hero-img img {
+width: 400px;
+margin: 10% 0 0 10%;
+height: auto;
+transition: all .5s linear;
+}
+
+.hero-img img:hover {
+width: 450px;
+opacity: 0.5;
+}
+
+.hero-text a {
+    display: inline-block;
+    background-color: #7c426b;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 12px;
+    font-weight: 300;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+.hero-text a:hover {
+    background-color: transparent;
+    border: 1px white;
+    transform: translateX(8px);
+    margin-left: 5px;
+}
+
+.hero-text a i {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.icons {
+    position: absolute;
+    top: 50vh;
+    transform: translateY(-50%);
+}
+
+.icons i {
+    display: block;
+    margin: 25px;
+    font-size: 25px;
+    transition: all .5s ease;
+}
+
+.icons i:hover {
+    color:#7d3066;
+    transform: translateY(-5px);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i {
+    display: block;
+    padding: 10px;
+    font-size: 25px;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover {
+    color:#7d3066;
+    transform: translateY(5px);
+}
+
+@media (max-width:992px){
+    section {
+        padding: 0 3%;
+        transition: 0.2s;
+    }
+    .hero-text {
+        padding-top: 0;
+    }
+
+    .hero-img {
+        text-align: center;
+    }
+
+    .hero-img img {
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    .hero-text p {
+        font-size: 70%;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+}
+
+@media (max-width:768px){
+
+    .menu-icon-action{
+        display: block;
+    }
+
+    #menu-icon{
+        display: block;
+    }
+    
+    .hero-text {
+        text-align: center;
+        padding-top: 100%;
+    }
+    
+    .hero-img img {
+        width: 80%;
+        margin: 0;
+    }
+
+    .hero {
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #500038a0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .5s ease-out;
+    }
+
+    .navlist a {
+        display: block;
+        margin: 7px 0;
+    }
+
+    #menu-toggle:checked + label.menu-icon-action + ul {
+        right: 0;
+    }
+}
